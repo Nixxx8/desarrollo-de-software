@@ -274,3 +274,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Iniciar la aplicación
     init();
 });
+
+// Nuevas funciones añadidas
+const setupCareerSearch = () => {
+    const searchInput = document.querySelector('#career-search');
+    if (!searchInput) return;
+    
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        document.querySelectorAll('.career-card').forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const description = card.querySelector('p').textContent.toLowerCase();
+            card.style.display = (title.includes(searchTerm)) || 
+                               (description.includes(searchTerm)) ? 
+                               'block' : 'none';
+        });
+    });
+};
+
+// Actualización de la función init
+const init = () => {
+    // Funciones existentes...
+    setupCareerSearch();
+    setupSliderIndicators();
+    loadGoogleMaps();
+};

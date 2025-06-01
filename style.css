@@ -748,3 +748,23 @@ img {
         padding: 0;
     }
 }
+
+
+/* Nuevos estilos añadidos */
+.warning-banner {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ffeeba;
+    font-size: 0.9rem;
+}
+
+.warning-banner .container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.warning-banner i {
+    font-size: 1.5rem;
+}
